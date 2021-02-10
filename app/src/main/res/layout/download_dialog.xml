@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <TextView
+        android:id="@+id/download"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="Download Video"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:gravity="center"
+        android:paddingEnd="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:drawableStart="@drawable/ic_download2"/>
+
+
+    <TextView
+        android:id="@+id/watch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/size"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Watch Video"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:drawableStart="@drawable/ic_baseline_video_library_24"/>
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/download"
+        app:layout_constraintEnd_toEndOf="@+id/download"
+        app:layout_constraintBottom_toBottomOf="@+id/download"
+        android:text=""
+        android:paddingEnd="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="@dimen/_5sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@+id/watch"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

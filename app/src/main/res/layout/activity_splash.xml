@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/theme_dark"
+    android:layout_height="match_parent"
+     >
+
+
+
+    <LinearLayout
+         android:layout_centerInParent="true"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/app_Logo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_down_arrow"/>
+        <TextView
+            android:id="@+id/logo_text"
+            android:layout_marginTop="@dimen/_10sdp"
+             android:layout_width="match_parent"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_height="@dimen/_20sdp"
+            android:textColor="@android:color/white"
+            android:text="ALL SX VIDEO DOWNLOADER"
+            android:layout_centerInParent="true"
+           />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="by Delinnova Technology Solutions."
+        android:textSize="@dimen/_8sdp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

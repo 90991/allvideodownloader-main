@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loadingPageProgress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_4sdp"
+        android:max="100"
+        android:progressDrawable="@drawable/loading_page_progress_status"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.delinnovtech.allsxvideodownloader.browsing_feature.TouchableWebView
+        android:id="@+id/page"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loadingPageProgress"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/download_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
+
+        <ImageView
+            android:id="@+id/videosFoundHUD"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_download_disble"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_file_download"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_download_count"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/badge_download_btn"
+            android:gravity="center"
+            android:text="30"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/videosFoundHUD"
+            app:layout_constraintEnd_toEndOf="@+id/videosFoundHUD"
+            app:layout_constraintStart_toStartOf="@+id/videosFoundHUD"
+            app:layout_constraintTop_toTopOf="@+id/videosFoundHUD" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/foundVideosWindow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_margin="@dimen/_30sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:orientation="horizontal"
+            android:padding="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/video"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/foundVideosClose"
+                android:layout_width="@dimen/icon_dimen"
+                android:layout_height="@dimen/icon_dimen"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/colorAccent"
+                android:src="@drawable/ic_cancel" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/videoList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/window_bg"
+            android:padding="@dimen/_10sdp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/videoFoundTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.delinnovtech.allsxvideodownloader.custom_video_view.CustomVideoView
+            android:id="@+id/videoFoundView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:uvv_autoRotation="true"
+            app:uvv_fitXY="false" />
+
+        <com.delinnovtech.allsxvideodownloader.custom_video_view.CustomMediaController
+            android:id="@+id/mediaFoundController"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:uvv_scalable="true" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
